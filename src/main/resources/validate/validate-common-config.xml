@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common-configs>
+    <include file="white-list-file.xml" />
+    <!-- value is reject or permit. default value is reject -->
+    <xml-entity value="reject" />
+    <ignore-appname disabled="false" />
+    <inputstream maxsize="102400" />
+    <nesting-level maxlevel="5" />
+    <intercept-on-failed enable="true" />
+    <check-config-file disabled="false" />
+    <limit-array-size enable="true" maxArraySize="300"/>
+    <allow-empty-value enable="true" />
+    <parse-empty-map-array enable="true" />
+    <json-parser type="fastjson" />
+    <exclude-url allUrlCheck="true" stateCode="400" errorHandler="com.huawei.trustsighting.handler.SzValidatorErrorHandler">
+        <!-- ts-core-security-V100R001C01B002-20210913.082504-220.jar -->
+        <url-pattern>/*.html</url-pattern>
+        <url-pattern>/**/*.html</url-pattern>
+        <url-pattern>/**/*.js</url-pattern>
+        <url-pattern>/**/*.css</url-pattern>
+        <url-pattern>/**/*.ico</url-pattern>
+        <url-pattern>/**/*.ttf</url-pattern>
+        <url-pattern>/**/*.woff</url-pattern>
+        <url-pattern>/**/*.jpg</url-pattern>
+        <url-pattern>/**/*.png</url-pattern>
+        <url-pattern>/**/*.gif</url-pattern>
+        <url-pattern>/**/*.jpeg</url-pattern>
+        <url-pattern>/**/*.xml</url-pattern>
+        <url-pattern>/**/*.json</url-pattern>
+        <url-pattern>/**/*.mp4</url-pattern>
+        <url-pattern>/**/*.svg</url-pattern>
+        <url-pattern>/**/*.mp3</url-pattern>
+    </exclude-url>
+    <exclude-parameter>
+        <form-exclude-parameter allParameterCheck="true">
+        </form-exclude-parameter>
+        <querystring-exclude-parameter allParameterCheck="true">
+        </querystring-exclude-parameter>
+        <urlpath-exclude-parameter allParameterCheck="true">
+            <parameter-name>slug</parameter-name>
+        </urlpath-exclude-parameter>
+        <json-exclude-parameter allParameterCheck="true">
+            <parameter-name>a.b</parameter-name>
+        </json-exclude-parameter>
+    </exclude-parameter>
+    <validators alias="email">
+        <validator name="MAX_LENGTH_VALIDATOR" maxLength="100" />
+        <validator name="EAMIL_VALIDATOR"  />
+        <validator name="XSS_ATTACK_VALIDATOR" />
+        <validator name="SQL_ATTACK_VALIDATOR" />
+    </validators>
+    <!--
+    商臻项目邮箱规则：
+      条件1：
+        @之前必须有内容且只能是字母(大小写)、数字、下划线(_)、减号(-)、点(.)
+      条件2：
+        @和最后一个点(.)之间必须有内容且只能是字母(大小写)、数字、点(.)、减号(-)，且两个点不能挨着
+      条件3：
+         最后一个点(.)之后必须有内容且内容只能是字母(大小写)、数字且长度为2到6个字节
+      条件4：
+        总长度[3,64]，@之前的[3,32]
+    -->
+    <validators alias="sz_email">
+        <validator name="REGEXP_VALIDATOR" rule="^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$"/>
+        <validator name="REGEXP_VALIDATOR" rule="^[\w\W]{3,32}@[\w\W]{0,31}$"/>
+    </validators>
+    <!--汉字{2，64} 英文{4，255}-->
+    <validators alias="sz_name">
+        <validator name="REGEXP_VALIDATOR" rule="^[\u4e00-\u9fa5]{2,64}$|^[A-Za-z]{4,255}$"/>
+    </validators>
+    <!--模糊查询条件汉字{1，64} 英文{1，255}-->
+    <validators alias="sz_name_query">
+        <validator name="REGEXP_VALIDATOR" rule="^[\u4e00-\u9fa5]{1,64}$|^[A-Za-z]{1,255}$"/>
+    </validators>
+    <validators alias="um_user_name">
+        <validator name="REGEXP_VALIDATOR" rule="[a-zA-Z0-9]{8,32}$"/>
+    </validators>
+    <validators alias="um_user_name_query">
+        <validator name="REGEXP_VALIDATOR" rule="[a-zA-Z0-9]{1,32}$"/>
+    </validators>
+    <validators alias="user_id">
+        <validator name="REGEXP_VALIDATOR" rule="^[0-9-]{1,30}$"/>
+    </validators>
+    <validators alias="group_id">
+        <validator name="REGEXP_VALIDATOR" rule="^[a-zA-Z0-9-]{1,37}$"/>
+    </validators>
+    <validators alias="token">
+        <validator name="REGEXP_VALIDATOR" rule="^[a-zA-Z0-9]{64}$"/>
+    </validators>
+    <validators alias="index_login_veryCode">
+        <validator name="REGEXP_VALIDATOR" rule="([0-9a-zA-Z]{4})"/>
+    </validators>
+    <validators alias="sys_role_name">
+        <validator name="REGEXP_VALIDATOR" rule="^[a-zA-Z0-9\u4e00-\u9fa5\·]{1,30}$"/>
+    </validators>
+    <!-- uuid校验规则-->
+    <validators alias="uuid">
+        <validator name="REGEXP_VALIDATOR" rule="[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}"/>
+    </validators>
+    <!-- String类型输入为数字 -->
+    <validators alias="string_number">
+        <validator name="REGEXP_VALIDATOR" rule="([0-9])+"/>
+    </validators>
+    <!-- String类型输入为小数或者整数 -->
+    <validators alias="string_double">
+        <validator name="REGEXP_VALIDATOR" rule="^[0-9]+([.]{1}[0-9]+){0,1}$"/>
+    </validators>
+    <!--默认规则 字母、数字、中文、中文符号-->
+    <validators alias="default_validate_rule">
+        <validator name="REGEXP_VALIDATOR"
+                   rule="^(?![+\-\s])([ .,'”“【】（）’‘：？，·。《》、；……￥！%\-_/0-9a-zA-Z\u4e00-\u9fa5])+"/>
+    </validators>
+    <!-- 描述规则 -->
+    <validators alias="desc_value_rule">
+        <validator name="REGEXP_VALIDATOR"
+                   rule="^(?![+\s])([&amp;?|()'\n\s\+\-.·,>\*”“【】（）’‘：:;？，。《》、；……￥！%\-_/0-9a-zA-Z\u4e00-\u9fa5\uff00-\uffff])+"/>
+    </validators>
+    <!-- String类型输入只能为0或者1 -->
+    <validators alias="is_zero_or_one">
+        <validator name="REGEXP_VALIDATOR" rule="(^[0-1]$)"/>
+    </validators>
+    <!-- 日期格式校验，格式为yyyy-MM-dd HH:mm:ss-->
+    <validators alias="date_yyyy_MM_dd_HH_mm_ss">
+        <validator name="REGEXP_VALIDATOR"
+                   rule="(\d{4})(?:\-)?([0]{1}\d{1}|[1]{1}[0-2]{1})(?:\-)?([0-2]{1}\d{1}|[3]{1}[0-1]{1})(?:\s)?([0-1]{1}\d{1}|[2]{1}[0-3]{1})(?::)?([0-5]{1}\d{1})(?::)?([0-5]{1}\d{1})"/>
+    </validators>
+
+    <!-- 日期格式校验，格式为yyyy-MM-dd-->
+    <validators alias="date_yyyy_MM_dd">
+        <validator name="REGEXP_VALIDATOR"
+                   rule="((((19|20)\d{2})-(0?(1|[3-9])|1[012])-(0?[1-9]|[12]\d|30))|(((19|20)\d{2})-(0?[13578]|1[02])-31)|(((19|20)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|((((19|20)([13579][26]|[2468][048]|0[48]))|(2000))-0?2-29))$"/>
+    </validators>
+    <!-- 日期格式校验，格式为yyyyMMddHHmmss-->
+    <validators alias="date_yyyyMMddHHmmss">
+        <validator name="REGEXP_VALIDATOR"
+                   rule="^((([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})(((0[13578]|1[02])(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|(02(0[1-9]|[1][0-9]|2[0-8]))))|((([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00))0229))([0-1]?[0-9]|2[0-3])([0-5][0-9])([0-5][0-9])$"/>
+    </validators>
+
+    <!--所有字符都可以匹配-->
+    <validators alias="all_validate_rule">
+        <validator name="REGEXP_VALIDATOR" rule="[\w\W]*"/>
+    </validators>
+
+    <!--规避特殊字符 /\*<>等-->
+    <validators alias="default_input_content_rule">
+        <validator name="REGEXP_VALIDATOR" rule="[\w\W]*"/>
+    </validators>
+
+    <!--URL类校验-->
+    <validators alias="sz_url_rule">
+        <validator name="REGEXP_VALIDATOR"
+                   rule="(http|https?|ftp|file)://[-A-Za-z0-9+&amp;@#/%?=~_|!:,.;]+[-A-Za-z0-9+&amp;@#/%=~_|]"/>
+        <validator name="BLACK_VALIDATOR" rule="\.\./"/>
+        <validator name="MAX_LENGTH_VALIDATOR" maxLength="1024"/>
+        <validator name="SQL_ATTACK_VALIDATOR"/>
+        <validator name="XSS_ATTACK_VALIDATOR"/>
+    </validators>
+
+    <!--URL类校验-->
+    <validators alias="sz_url_rule_long">
+        <validator name="REGEXP_VALIDATOR"
+                   rule="(http|https?|ftp|file)://[-A-Za-z0-9+&amp;@#/%?=~_|!:,.;]+[-A-Za-z0-9+&amp;@#/%=~_|]"/>
+        <validator name="BLACK_VALIDATOR" rule="\.\./"/>
+        <validator name="MAX_LENGTH_VALIDATOR" maxLength="255"/>
+        <validator name="SQL_ATTACK_VALIDATOR"/>
+        <validator name="XSS_ATTACK_VALIDATOR"/>
+    </validators>
+
+    <!--ip类校验-->
+    <validators alias="sz_ip_rule">
+        <validator name="REGEXP_VALIDATOR" rule="^[0-9a-zA-Z.:]*$"/>
+    </validators>
+
+    <!--口令类校验-->
+    <validators alias="sz_command_rule">
+        <validator name="REGEXP_VALIDATOR"
+                   rule="^[0-9a-zA-Z_\u4E00-\u9FA5'./?,`~!@#$%^*()-_=+|[{}];:&quot;&gt;&lt;&amp;]*$"/>
+    </validators>
+
+    <!--规避特殊字符 \ / : * ? < > |-->
+    <validators alias="sz_input_content_rule">
+        <validator name="REGEXP_VALIDATOR" rule="^[^/\\:*&gt;&lt;?|]*$"/>
+    </validators>
+    <!--规避特殊字符 \ : * ? < > |-->
+    <validators alias="sz_opertype_rule">
+        <validator name="REGEXP_VALIDATOR" rule="^[0-9a-zA-Z/_]*$"/>
+    </validators>
+    <validators alias="phone">
+        <validator name="REGEXP_VALIDATOR" rule="^[1]\d{10}$"/>
+    </validators>
+    <validators alias="phone_query">
+        <validator name="REGEXP_VALIDATOR" rule="^\d{0,11}$"/>
+    </validators>
+
+    <!-- 分页小于50 -->
+    <validators alias="sz_page_limit">
+        <validator name="REGEXP_VALIDATOR" rule="(^[1-4][0-9]$)|(^[5][0]$)|(^[1-9]$)"/>
+    </validators>
+
+    <validators alias="sz_forbid_empty">
+        <validator name="REGEXP_VALIDATOR" rule="\S+"/>
+    </validators>
+
+    <validators alias="sz_url">
+        <validator name="RANGE_LENGTH_VALIDATOR" minLength="1"
+                   maxLength="255" errorMessage="WEB.VALIDATOR.RANGE_LENGTH"/>
+    </validators>
+
+    <!--密码类校验-->
+    <validators alias="sz_password_rule">
+        <validator name="REGEXP_VALIDATOR"
+                   rule="^[0-9a-zA-Z_'./?,`~!@#$%^*()-_=+|[{}];:&quot;&gt;&lt;&amp;]{8,32}$"/>
+    </validators>
+    <validators alias="country_code">
+        <validator name="REGEXP_VALIDATOR" rule="^[+]\d{2,9}$"/>
+    </validators>
+    <!--短信验证码-->
+    <validators alias="sms_veryCode">
+        <validator name="REGEXP_VALIDATOR" rule="([0-9]{6})"/>
+    </validators>
+    <validators alias="normal_character">
+        <validator name="REGEXP_VALIDATOR" rule="^[0-9a-zA-Z/_.?|#=&amp;: -]*$"/>
+    </validators>
+    <validators alias="audit_status">
+        <validator name="REGEXP_VALIDATOR" rule="(^[0-6]$)"/>
+    </validators>
+    <validators alias="status">
+        <validator name="REGEXP_VALIDATOR" rule="(^[0-2]$)"/>
+    </validators>
+    <validators alias="object_type">
+        <validator name="REGEXP_VALIDATOR" rule="(^[1-4]$)"/>
+    </validators>
+    <!--不允许输入中文-->
+    <validators alias="sz_input_zn_rule">
+        <validator name="REGEXP_VALIDATOR" rule="[^\u4e00-\u9fa5]*"/>
+    </validators>
+
+    <!-- 固定分页10、20、50 -->
+    <validators alias="sz_fix_limit">
+        <validator name="REGEXP_VALIDATOR" rule="10|20|50|8|16|32|5"/>
+    </validators>
+
+    <!-- 正整数 -->
+    <validators alias="sz_positive_start">
+        <validator name="REGEXP_VALIDATOR" rule="^[+]{0,1}(\d+)$"/>
+    </validators>
+
+    <!-- 输入框中文、数字、英文 -->
+    <validators alias="sz_query_like_name">
+        <validator name="REGEXP_VALIDATOR" rule="^[0-9a-zA-Z\u4e00-\u9fa5]{1,255}$"/>
+    </validators>
+
+    <!-- 输入框数字和英文或中文 -->
+    <validators alias="sz_query_like_exh_name">
+        <validator name="REGEXP_VALIDATOR" rule="^[a-zA-Z]{1,255}$|^[\u4e00-\u9fa5]{1,64}$"/>
+    </validators>
+</common-configs>
+

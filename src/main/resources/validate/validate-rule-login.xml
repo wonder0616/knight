@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<param_validators>
+    <param_validator url="/login/login" errorHandler="com.huawei.trustsighting.handler.SzValidatorErrorHandler" method="post" dataPattern="json">
+        <parameter name="username" required="true">
+            <validator ref="um_user_name" errorMessage="WEB.VALIDATOR.UM.USERNAME"/>
+        </parameter>
+        <parameter name="password" required="true">
+            <validator name="MAX_LENGTH_VALIDATOR"  maxLength="32" errorMessage="WEB.VALIDATOR.UM.PASSWORD"/>
+        </parameter>
+        <parameter name="verifyCode" required="true">
+            <validator ref="index_login_veryCode" errorMessage="WEB.VALIDATOR.SPE.CHARS"/>
+        </parameter>
+    </param_validator>
+</param_validators>
