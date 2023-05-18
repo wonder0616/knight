@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.jeecgframework.boot</groupId>
-    <artifactId>jeecg-boot-parent</artifactId>
-    <version>2.4.3</version>
+    <groupId>com.knight</groupId>
+    <artifactId>blog</artifactId>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -14,76 +14,68 @@
     </parent>
 
     <properties>
-        <jeecgboot.version>2.4.3</jeecgboot.version>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
-        <xxl-job-core.version>2.2.0</xxl-job-core.version>
-        <fastjson.version>1.2.75</fastjson.version>
-        <knife4j-spring-boot-starter.version>2.0.4</knife4j-spring-boot-starter.version>
-        <knife4j-spring-ui.version>2.0.4</knife4j-spring-ui.version>
-        <postgresql.version>42.2.6</postgresql.version>
-        <ojdbc6.version>11.2.0.3</ojdbc6.version>
-        <sqljdbc4.version>4.0</sqljdbc4.version>
-        <mysql-connector-java.version>8.0.21</mysql-connector-java.version>
-        <dynamic-datasource-spring-boot-starter.version>3.2.0</dynamic-datasource-spring-boot-starter.version>
-        <hutool-all.version>5.3.8</hutool-all.version>
-        <redisson.version>3.13.6</redisson.version>
-        <commons-beanutils.version>1.9.4</commons-beanutils.version>
-        <guava.version>29.0-jre</guava.version>
-        <mybatis-plus.version>3.4.1</mybatis-plus.version>
-        <druid.version>1.1.22</druid.version>
-        <commons.version>2.6</commons.version>
-        <aliyun-java-sdk-dysmsapi.version>2.1.0</aliyun-java-sdk-dysmsapi.version>
-        <aliyun.oss.version>3.11.2</aliyun.oss.version>
-        <shiro.version>1.7.1</shiro.version>
-        <java-jwt.version>3.11.0</java-jwt.version>
-        <shiro-redis.version>3.1.0</shiro-redis.version>
-        <codegenerate.version>1.3.1</codegenerate.version>
-        <autopoi-web.version>1.3</autopoi-web.version>
-        <minio.version>8.0.3</minio.version>
-        <justauth-spring-boot-starter.version>1.3.4</justauth-spring-boot-starter.version>
-        <dom4j.version>1.6.1</dom4j.version>
-        <qiniu-java-sdk.version>7.4.0</qiniu-java-sdk.version>
-        <activiti.version>5.22.0</activiti.version>
+        <fastjson.version>2.0.25</fastjson.version>
+        <mybatis.version>2.1.4</mybatis.version>
+        <mapper.version>2.1.5</mapper.version>
+        <pagehelper.version>1.3.0</pagehelper.version>
+        <druid.version>1.2.6</druid.version>
+        <shiro.spring.version>1.7.1</shiro.spring.version>
+        <shiro.redis.version>2.4.2.1-RELEASE</shiro.redis.version>
+        <shiro.freemarker.tags.version>0.1</shiro.freemarker.tags.version>
+        <jsoup.version>1.9.2</jsoup.version>
+        <useragentutils.version>1.21</useragentutils.version>
+        <javax.validation.version>2.0.1.Final</javax.validation.version>
+        <hibernate.validator.version>7.0.1.Final</hibernate.validator.version>
+        <blog-hunter.version>1.0.4</blog-hunter.version>
+        <hutool.version>5.5.7</hutool.version>
+        <braum.version>1.0.0-alpha</braum.version>
+        <jap.version>1.0.4</jap.version>
+        <qiniu.version>7.12.1</qiniu.version>
+        <spring.web.version>5.1.17.RELEASE</spring.web.version>
+        <aliyun.oss.version>3.16.1</aliyun.oss.version>
+<!--        <swagger.starter.version>3.0.0</swagger.starter.version>-->
+<!--        <servlet.api.version>3.0-alpha-1</servlet.api.version>-->
+<!--        <springBootAdmin.version>2.2.1</springBootAdmin.version>-->
+<!--        <spring-boot-dependencies.version>2.2.5.RELEASE</spring-boot-dependencies.version>-->
     </properties>
 
     <modules>
-        <module>jeecg-boot-base</module>
-        <module>jeecg-boot-module-system</module>
+        <module>blog-base</module>
+        <module>blog-admin</module>
+        <module>blog-file</module>
+        <module>blog-web</module>
     </modules>
 
-    <distributionManagement>
-        <repository>
-            <id>jeecg</id>
-            <name>jeecg Repository</name>
-            <url>http://maven.jeecg.com:8090/nexus/content/repositories/jeecg</url>
-        </repository>
-        <snapshotRepository>
-            <id>jeecg-snapshots</id>
-            <name>jeecg Snapshot Repository</name>
-            <url>http://maven.jeecg.com:8090/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-    <repositories>
-        <repository>
-            <id>aliyun</id>
-            <name>aliyun Repository</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>jeecg</id>
-            <name>jeecg Repository</name>
-            <url>http://maven.jeecg.org/nexus/content/repositories/jeecg</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>jeecg</id>-->
+<!--            <name>jeecg Repository</name>-->
+<!--            <url>http://maven.jeecg.com:8090/nexus/content/repositories/jeecg</url>-->
+<!--        </repository>-->
+<!--        <snapshotRepository>-->
+<!--            <id>jeecg-snapshots</id>-->
+<!--            <name>jeecg Snapshot Repository</name>-->
+<!--            <url>http://maven.jeecg.com:8090/nexus/content/repositories/snapshots/</url>-->
+<!--        </snapshotRepository>-->
+<!--    </distributionManagement>-->
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>aliyun</id>-->
+<!--            <name>aliyun Repository</name>-->
+<!--            <url>http://maven.aliyun.com/nexus/content/groups/public</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>false</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>jeecg</id>-->
+<!--            <name>jeecg Repository</name>-->
+<!--            <url>http://maven.jeecg.org/nexus/content/repositories/jeecg</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>false</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
     <dependencies>
         <dependency>
@@ -103,130 +95,39 @@
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <version>${hutool.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
-            <!-- spring-cloud-->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!-- spring-cloud-alibaba -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud-alibaba.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- system 模块-->
-            <dependency>
-                <groupId>org.jeecgframework.boot</groupId>
-                <artifactId>jeecg-boot-module-system</artifactId>
-                <version>${jeecgboot.version}</version>
-            </dependency>
-
-            <!-- jeecg tools -->
-            <dependency>
-                <groupId>org.jeecgframework.boot</groupId>
-                <artifactId>jeecg-boot-base-tools</artifactId>
-                <version>${jeecgboot.version}</version>
-            </dependency>
-            <!-- jeecg core -->
-            <dependency>
-                <groupId>org.jeecgframework.boot</groupId>
-                <artifactId>jeecg-boot-base-core</artifactId>
-                <version>${jeecgboot.version}</version>
-            </dependency>
-            <!-- system 单体 api -->
-            <dependency>
-                <groupId>org.jeecgframework.boot</groupId>
-                <artifactId>jeecg-system-local-api</artifactId>
-                <version>${jeecgboot.version}</version>
-            </dependency>
-
-            <!-- guava工具类 -->
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
-            </dependency>
-
-            <!-- hutool工具类-->
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool-all.version}</version>
-            </dependency>
-
-            <!-- commons-beanutils -->
-            <dependency>
-                <groupId>commons-beanutils</groupId>
-                <artifactId>commons-beanutils</artifactId>
-                <version>${commons-beanutils.version}</version>
-            </dependency>
-
-            <!-- 二维码工具包 -->
-            <dependency>
-                <groupId>com.google.zxing</groupId>
-                <artifactId>core</artifactId>
-                <version>3.4.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>commons-fileupload</groupId>
-                <artifactId>commons-fileupload</artifactId>
-                <version>1.4</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>commons-io</artifactId>
-                        <groupId>commons-io</groupId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-
             <!-- justauth第三方登录  -->
-            <dependency>
-                <groupId>com.xkcoding.justauth</groupId>
-                <artifactId>justauth-spring-boot-starter</artifactId>
-                <version>${justauth-spring-boot-starter.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>hutool-core</artifactId>
-                        <groupId>cn.hutool</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>fastjson</artifactId>
-                        <groupId>com.alibaba</groupId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.xkcoding.justauth</groupId>-->
+<!--                <artifactId>justauth-spring-boot-starter</artifactId>-->
+<!--                <version>${justauth-spring-boot-starter.version}</version>-->
+<!--                <exclusions>-->
+<!--                    <exclusion>-->
+<!--                        <artifactId>hutool-core</artifactId>-->
+<!--                        <groupId>cn.hutool</groupId>-->
+<!--                    </exclusion>-->
+<!--                    <exclusion>-->
+<!--                        <artifactId>fastjson</artifactId>-->
+<!--                        <groupId>com.alibaba</groupId>-->
+<!--                    </exclusion>-->
+<!--                </exclusions>-->
+<!--            </dependency>-->
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp</artifactId>
                 <version>4.4.1</version>
             </dependency>
 
-            <dependency>
-                <groupId>io.minio</groupId>
-                <artifactId>minio</artifactId>
-                <version>${minio.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>okio</artifactId>
-                        <groupId>com.squareup.okio</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>okhttp</artifactId>
-                        <groupId>com.squareup.okhttp3</groupId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 

@@ -1,5 +1,0 @@
-spring:
-  application:
-    name: tpm-server
-  profiles:
-    active: dev
