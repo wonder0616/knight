@@ -1,7 +1,3 @@
-自己玩
-===============
-
-当前最新版本： 1.0.1（发布日期：20210322）
 
 ## idea日常使用小妙招
 
@@ -12,6 +8,8 @@
 
 
 #### 一、java文件 import屎黄色底纹去除
+
+![](https://oscimg.oschina.net/oscnet/up-70c511fe5d545be9011debdca2614ac88ca.png)
 
 
 ```
