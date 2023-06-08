@@ -1,21 +1,20 @@
 
 ## mysql
-localhost 3306
-12345678
+- localhost 3306
+- 12345678
 
 ## redis
-127.0.0.1 6379
-123456
-cd /usr/local/redis
-./bin/redis-server redis.conf
+- 127.0.0.1 6379
+- 123456
+- cd /usr/local/redis
+- ./bin/redis-server redis.conf
 
 ## maven仓库
 http://localhost:28899/repository/maven-public
 
-/Users/knight/soft/nexus-3.51.0-01-mac/nexus-3.51.0-01/bin
-
-./nexus start
-./nexus status
+- /Users/knight/soft/nexus-3.51.0-01-mac/nexus-3.51.0-01/bin
+- ./nexus start
+- ./nexus status
 
 ```
 <settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
@@ -50,11 +49,11 @@ http://localhost:28899/repository/maven-public
 
 
 
-### PostgreSQL
-123456
+## PostgreSQL
+- 123456
 
-安装路径
-/Library/PostgreSQL/15
+### 安装路径
+- /Library/PostgreSQL/15
 
 ```
 Installation Directory: /Library/PostgreSQL/15
@@ -71,6 +70,6 @@ Installation Log: /tmp/install-postgresql.log
 ```
 
 ### postgresql
-localhost
-postgres
-123456
+- localhost
+- postgres
+- 123456
