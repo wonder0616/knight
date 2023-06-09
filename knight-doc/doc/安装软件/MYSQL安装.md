@@ -82,9 +82,9 @@ alter user 'root'@'localhost' identified by 'Huawei@123123';
 
 3.如果想root能远程访问
 use mysql;
-update user set host = '%' where user = 'root';      #使root能任何host访问
-flush privileges;                                                       #刷新
-create user 'root'@'%' identified with mysql_native_password by ‘12345678';
+update user set host = '%' where user = 'root';      #使root能任何host访问
+flush privileges;                                                       #刷新
+create user 'root'@'%' identified with mysql_native_password by ‘12345678';
 
 赋权限
 grant all privileges on *.* to 'root'@'%' with grant option;
@@ -98,7 +98,7 @@ source /root/.../xxx.sql
 若是含有创建数据库的脚本，则在最外层，
 如果是指定库的，需要进入到对应库里执行
 
-use xxx;
+use xxx;
 
 刷脚本：
 1.用ROOT登录，修改/etc/my.cnf

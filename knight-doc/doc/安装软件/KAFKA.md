@@ -25,5 +25,5 @@
 ### 修改server中ip以及端口
 /Users/knight/Library/Mobile Documents/iCloud~md~obsidian/Documents/knight/knight/附件和图片/server.properties
 
-- ./kafka-server-start.sh -daemon  ../config/server.properties
-- ./kafka-server-stop.sh -daemon  ../config/server.properties
+- ./kafka-server-start.sh -daemon  ../config/server.properties
+- ./kafka-server-stop.sh -daemon  ../config/server.properties

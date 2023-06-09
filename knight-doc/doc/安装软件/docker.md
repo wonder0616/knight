@@ -23,31 +23,31 @@ cat EulerOS_V200R005C00SPC326B001-docker.x86_64.tar.xz | docker import - euleros
 
 启动docker
 // 常驻启动
-docker run -d -i euleros /bin/bash
-docker run -d -i centos:7.9.2009 /bin/bash
-docker run -d -i nginx:latest /bin/bash
+docker run -d -i euleros /bin/bash
+docker run -d -i centos:7.9.2009 /bin/bash
+docker run -d -i nginx:latest /bin/bash
 // 常驻启动 + 内部端口映射
 docker run -d -i -p 8012:8012 centos:apache /bin/bash
 // 不常驻启动（启动后进入docker），退出docker后 docker就停止运行
 docker run -it euleros /bin/bash
 
 连接docker
-docker exec -it  4a30e2032c7a bash
-docker exec -it -u root  189fa622059d bash
+docker exec -it  4a30e2032c7a bash
+docker exec -it -u root  189fa622059d bash
 
-docker cp 容器名:要拷贝的文件在容器里面的路径       要拷贝到宿主机的相应路径
-docker cp k8s_tpm-server_tpm-server-6749dff7f9-gw9tj_phm_3bc9ef0a-0141-419a-8ba3-a1b0d5851591_4:/home/cme/log/zhangertong.pdf /home/paas/zhangertong
+docker cp 容器名:要拷贝的文件在容器里面的路径       要拷贝到宿主机的相应路径
+docker cp k8s_tpm-server_tpm-server-6749dff7f9-gw9tj_phm_3bc9ef0a-0141-419a-8ba3-a1b0d5851591_4:/home/cme/log/zhangertong.pdf /home/paas/zhangertong
 
 docker cp 本地文件路径 容器ID/容器NAME:容器内路径
 
-docker cp  xxxx.zip 10568991378c:/root
-docker cp    5733c488fc69:/home/cme/log
-docker cp  xxxx.zip  c5e08ea32c64:/root
+docker cp  xxxx.zip 10568991378c:/root
+docker cp    5733c488fc69:/home/cme/log
+docker cp  xxxx.zip  c5e08ea32c64:/root
 
 基于某个docker制作镜像
 
-docker commit CONTAINERID  制作后的镜像名称
-docker commit 5536df0fa9a1 centos:zhangertong
+docker commit CONTAINERID  制作后的镜像名称
+docker commit 5536df0fa9a1 centos:zhangertong
 
 保存镜像到本地
 docker save -o docker-centos-apache-image.tar centos:zhangertong
@@ -65,5 +65,5 @@ docker stop $(docker ps -q)
 docker rm $(docker ps -aq)
 
 3、删除所有镜像
-docker rmi -f $(docker images -qa)
-docker rmi -f 801dada78aad
+docker rmi -f $(docker images -qa)
+docker rmi -f 801dada78aad

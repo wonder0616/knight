@@ -5,7 +5,7 @@
 [https://tomcat.apache.org/](https://tomcat.apache.org/)
 
 把包上传到指定目录，然后解压
-tar -zxvf apache-tomcat-10.0.22.tar.gz
+tar -zxvf apache-tomcat-10.0.22.tar.gz
 
 vi /etc/profile
 
@@ -59,7 +59,7 @@ path 设置访问路径
 姑且命名为tpm2.xml
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
-    <Context docBase="D:\code\huaweicloud\jeecg-boot\jeecg-boot-module-system\target\tpm-server" reloadable="true" />
+    <Context docBase="D:\code\huaweicloud\jeecg-boot\jeecg-boot-module-system\target\tpm-server" reloadable="true" />
 ```
 
 ![[Pasted image 20230325191246.png]]

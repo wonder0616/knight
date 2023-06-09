@@ -71,7 +71,7 @@ protected-mode yes（保护模式开）
 
 - 修改为如下：
 ```
-#bind 127.0.0.1   改成当前服务器的ip或者直接注释
+#bind 127.0.0.1   改成当前服务器的ip或者直接注释
 protected-mode no
 requirepass 你的密码
 ```
@@ -120,7 +120,7 @@ WantedBy=multi-user.target
 
 - 常用的服务命令
 - 启动redis服务
-- systemctl start redis.service  
+- systemctl start redis.service  
 - 停止redis服务
 - systemctl stop redis.service
 - 重新启动服务

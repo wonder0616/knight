@@ -1,11 +1,11 @@
 Centos
 [https://blog.csdn.net/weixin_45401600/article/details/125172685](https://blog.csdn.net/weixin_45401600/article/details/125172685)
 
-解压压缩包 nexus-3.41.0-01-unix.tar.gz
+解压压缩包 nexus-3.41.0-01-unix.tar.gz
 /root/soft/nexus-3.41.0-01/bin
 
 移到 /data/nexus/nexus-3.31.1-01/bin
-移到 /data/nexus/nexus-3.31.1-01/etc/nexus-default.properties  可修改端口
+移到 /data/nexus/nexus-3.31.1-01/etc/nexus-default.properties  可修改端口
 执行 ./nexus start
 执行 ./nexus status 查看启动状态
 
