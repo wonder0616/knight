@@ -15,6 +15,9 @@
 
 - 执行命令
 - yum install -y java-1.8.0-openjdk-devel.x86_64
+- yum install -y java-1.8.0-openjdk-devel.aarch64
+  > 基于mac虚拟机版本的安装
+  >
 - 执行完后会看见控制台刷出很多输出。
 - 耐心等待至自动安装完成
 - 安装目录在
