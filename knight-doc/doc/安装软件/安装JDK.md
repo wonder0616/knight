@@ -1,7 +1,8 @@
-centos
+
+### centos
 [https://www.jb51.net/article/140257.htm](https://www.jb51.net/article/140257.htm)
 
-aarch
+### aarch
 [https://blog.csdn.net/anyiVIP/article/details/120379604](https://blog.csdn.net/anyiVIP/article/details/120379604) 
 
 ### 安装jdk：
