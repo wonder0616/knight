@@ -11,6 +11,8 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <spring.boot.version>2.6.6</spring.boot.version>
+
         <fastjson.version>1.2.83</fastjson.version>
         <pegdown.version>1.6.0</pegdown.version>
         <knife4j-spring-boot-starter.version>3.0.3</knife4j-spring-boot-starter.version>
@@ -52,37 +54,59 @@
         <relativePath/>
     </parent>
     <modules>
-<!--        <module>knight-base-core</module>-->
-<!--        <module>knight-doc</module>-->
+        <module>knight-dingding</module>
+<!--        <module>knight-dingding</module>-->
     </modules>
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-test</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <!-- Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <!-- json -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
         <!-- markdown -->
         <dependency>
             <groupId>org.pegdown</groupId>
             <artifactId>pegdown</artifactId>
             <version>${pegdown.version}</version>
         </dependency>
+        <!--  集成log4j2日志  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.boot.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+        </dependency>
+        <!-- redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <!-- spring2.X集成redis所需common-pool2-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
@@ -135,61 +159,4 @@
             </resource>
         </resources>
     </build>
-    <!-- 环境 -->
-    <profiles>
-        <!-- 开发 -->
-        <profile>
-            <id>dev</id>
-            <activation>
-                <!--默认激活配置-->
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <!--当前环境-->
-                <profile.name>dev</profile.name>
-                <!--Nacos服务地址-->
-                <config.server-addr>jeecg-boot-nacos:8848</config.server-addr>
-                <!--Nacos配置中心命名空间,用于支持多环境.这里必须使用ID，不能使用名称,默认为空-->
-<!--                <config.namespace></config.namespace>-->
-                <!--Nacos配置分组名称-->
-                <config.group>DEFAULT_GROUP</config.group>
-            </properties>
-        </profile>
-        <!-- 测试 -->
-        <profile>
-            <id>test</id>
-            <properties>
-                <!--当前环境-->
-                <profile.name>test</profile.name>
-                <!--Nacos服务地址-->
-                <config.server-addr>jeecg-boot-nacos:8848</config.server-addr>
-                <!--Nacos配置中心命名空间,用于支持多环境.这里必须使用ID，不能使用名称,默认为空-->
-<!--                <config.namespace></config.namespace>-->
-                <!--Nacos配置分组名称-->
-                <config.group>DEFAULT_GROUP</config.group>
-            </properties>
-        </profile>
-        <!-- 生产 -->
-        <profile>
-            <id>prod</id>
-            <properties>
-                <!--当前环境-->
-                <profile.name>prod</profile.name>
-                <!--Nacos服务地址-->
-                <config.server-addr>jeecg-boot-nacos:8848</config.server-addr>
-                <!--Nacos配置中心命名空间,用于支持多环境.这里必须使用ID，不能使用名称,默认为空-->
-<!--                <config.namespace></config.namespace>-->
-                <!--Nacos配置分组名称-->
-                <config.group>DEFAULT_GROUP</config.group>
-            </properties>
-        </profile>
-        <!-- SpringCloud运行环境 -->
-        <!--        <profile>-->
-        <!--            <id>SpringCloud</id>-->
-        <!--            <modules>-->
-        <!--                &lt;!&ndash; 微服务模块&ndash;&gt;-->
-        <!--                <module>knight-server-cloud</module>-->
-        <!--            </modules>-->
-        <!--        </profile>-->
-    </profiles>
 </project>
