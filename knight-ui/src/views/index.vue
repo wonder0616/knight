@@ -22,11 +22,11 @@
           >
           <br />
           阿里云服务器折扣区
-          <el-link href="http://aly.ruoyi.vip" type="primary" target="_blank"
+          <el-link href="http://aly.knight.vip" type="primary" target="_blank"
             >>☛☛点我进入☚☚</el-link
           >
           &nbsp;&nbsp;&nbsp; 腾讯云服务器秒杀区
-          <el-link href="http://txy.ruoyi.vip" type="primary" target="_blank"
+          <el-link href="http://txy.knight.vip" type="primary" target="_blank"
             >>☛☛点我进入☚☚</el-link
           ><br />
           <h4 class="text-danger">
@@ -112,16 +112,16 @@
           <div class="body">
             <p>
               <i class="el-icon-s-promotion"></i> 官网：<el-link
-                href="http://www.ruoyi.vip"
+                href="http://www.knight.vip"
                 target="_blank"
-                >http://www.ruoyi.vip</el-link
+                >http://www.knight.vip</el-link
               >
             </p>
             <p>
               <i class="el-icon-user-solid"></i> QQ群：<s> 满937441 </s> <s> 满887144332 </s>
               <s> 满180251782 </s> <s> 满104180207 </s> <s> 满186866453 </s> <s> 满201396349 </s>
-              <s> 满101456076 </s> <s> 满101539465 </s> <s> 满264312783 </s> <s> 满167385320 </s> 
-              <s> 满104748341 </s> <s> 满160110482 </s> <s> 满170801498 </s> <s> 满108482800 </s> 
+              <s> 满101456076 </s> <s> 满101539465 </s> <s> 满264312783 </s> <s> 满167385320 </s>
+              <s> 满104748341 </s> <s> 满160110482 </s> <s> 满170801498 </s> <s> 满108482800 </s>
               <s> 满101046199 </s> <s> 满136919097 </s> <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=0vBbSb0ztbBgVtn3kJS-Q4HUNYwip89G&authKey=8irq5PhutrZmWIvsUsklBxhj57l%2F1nOZqjzigkXZVoZE451GG4JHPOqW7AW6cf0T&noverify=0&group_code=143961921" target="_blank">143961921</a>
             </p>
             <p>

@@ -2,12 +2,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-		<groupId>com.zet</groupId>
+		<groupId>com.knight</groupId>
 		<artifactId>knight-parent</artifactId>
 		<version>1.0.1</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>knight-core</artifactId>
+	<artifactId>knight-base-core</artifactId>
 
 	<repositories>
 		<repository>
@@ -61,6 +61,16 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring-boot-autoconfigure</artifactId>
+					<groupId>org.springframework.boot</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>spring-boot-actuator-autoconfigure</artifactId>
+					<groupId>org.springframework.boot</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<!--springboot2.3+ 需引入validation对应的包-->
 		<dependency>
@@ -134,24 +144,24 @@
 		</dependency>
 
 		<!--shiro-->
-		<dependency>
-			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-spring-boot-starter</artifactId>
-			<version>${shiro.version}</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.apache.shiro</groupId>-->
+<!--			<artifactId>shiro-spring-boot-starter</artifactId>-->
+<!--			<version>${shiro.version}</version>-->
+<!--		</dependency>-->
 
 		<!-- shiro-redis -->
-		<dependency>
-			<groupId>org.crazycake</groupId>
-			<artifactId>shiro-redis</artifactId>
-			<version>${shiro-redis.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.shiro</groupId>
-					<artifactId>shiro-core</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.crazycake</groupId>-->
+<!--			<artifactId>shiro-redis</artifactId>-->
+<!--			<version>${shiro-redis.version}</version>-->
+<!--			<exclusions>-->
+<!--				<exclusion>-->
+<!--					<groupId>org.apache.shiro</groupId>-->
+<!--					<artifactId>shiro-core</artifactId>-->
+<!--				</exclusion>-->
+<!--			</exclusions>-->
+<!--		</dependency>-->
 
 		<!--Redis-->
 		<dependency>
@@ -159,7 +169,38 @@
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 
+		<!-- pagehelper 分页插件 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>${pagehelper.boot.version}</version>
+		</dependency>
+		<!-- spring security 安全认证 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 
+		<!-- excel工具 -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+
+		<!-- 阿里JSON解析器 -->
+		<dependency>
+			<groupId>com.alibaba.fastjson2</groupId>
+			<artifactId>fastjson2</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
+
+		<!-- Token生成与解析-->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>${jwt.version}</version>
+		</dependency>
 	</dependencies>
 
 </project>

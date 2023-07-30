@@ -7,7 +7,7 @@
     <!--变量配置-->
     <Properties>
         <!-- 定义日志存储的路径，不要配置相对路径 -->
-        <property name="FILE_PATH" value="/Users/knight/code/local/knight/knight-dingding/logs" />
+        <property name="FILE_PATH" value="/Users/knight/code/local/knight/logs" />
         <!-- 项目名称:Datalink2Dinging -->
         <property name="FILE_NAME" value="knight-dingding" />
         <!-- 格式化输出：%date表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度 %msg：日志消息，%n是换行符-->

@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.zet</groupId>
+    <groupId>com.knight</groupId>
     <artifactId>knight-parent</artifactId>
     <version>1.0.1</version>
     <packaging>pom</packaging>
@@ -24,7 +24,7 @@
         <!-- 持久层 -->
         <mybatis-plus.version>3.5.1</mybatis-plus.version>
         <dynamic-datasource-spring-boot-starter.version>3.2.0</dynamic-datasource-spring-boot-starter.version>
-        <druid.version>1.1.22</druid.version>
+        <druid.version>1.2.16</druid.version>
         <minidao.version>1.9.0</minidao.version>
 
         <!-- Log4j2爆雷漏洞 -->
@@ -32,8 +32,17 @@
         <logback.version>1.2.9</logback.version>
 
         <!-- shiro -->
-        <shiro.version>1.10.0</shiro.version>
-        <shiro-redis.version>3.1.0</shiro-redis.version>
+<!--        <shiro.version>1.10.0</shiro.version>-->
+<!--        <shiro-redis.version>3.1.0</shiro-redis.version>-->
+
+        <swagger.version>3.0.0</swagger.version>
+        <pagehelper.boot.version>1.4.6</pagehelper.boot.version>
+        <poi.version>4.1.2</poi.version>
+        <fastjson.version>2.0.34</fastjson.version>
+        <kaptcha.version>2.3.3</kaptcha.version>
+        <oshi.version>6.4.3</oshi.version>
+        <bitwalker.version>1.21</bitwalker.version>
+        <jwt.version>0.9.1</jwt.version>
     </properties>
 
     <developers>
@@ -54,10 +63,19 @@
         <relativePath/>
     </parent>
     <modules>
-        <module>knight-dingding</module>
 <!--        <module>knight-dingding</module>-->
+        <module>knight-admin</module>
+        <module>knight-system</module>
+        <module>knight-framework</module>
+        <module>knight-base-core</module>
     </modules>
     <dependencies>
+        <!-- pagehelper 分页插件 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>${pagehelper.boot.version}</version>
+        </dependency>
         <!-- markdown -->
         <dependency>
             <groupId>org.pegdown</groupId>
@@ -105,6 +123,19 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
             <version>2.11.1</version>
+        </dependency>
+
+        <!-- Swagger3依赖 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>${swagger.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-models</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
     </dependencies>
