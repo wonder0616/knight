@@ -16,7 +16,8 @@ public class KnightAdminApplication
     {
         // System.setProperty("spring.devtools.restart.enabled", "false");
         SpringApplication.run(KnightAdminApplication.class, args);
-        System.out.println("(♥◠‿◠)ﾉﾞ  若依启动成功   ლ(´ڡ`ლ)ﾞ  \n" +
+        System.out.println("(♥◠‿◠)ﾉﾞ  xxx启动成功   ლ(´ڡ`ლ)" );
+        /*System.out.println("(♥◠‿◠)ﾉﾞ  xxx启动成功   ლ(´ڡ`ლ)ﾞ  \n" +
                 " .-------.       ____     __        \n" +
                 " |  _ _   \\      \\   \\   /  /    \n" +
                 " | ( ' )  |       \\  _. /  '       \n" +
@@ -25,6 +26,6 @@ public class KnightAdminApplication
                 " |  |\\ \\  |  ||   |(_,_)'         \n" +
                 " |  | \\ `'   /|   `-'  /           \n" +
                 " |  |  \\    /  \\      /           \n" +
-                " ''-'   `'-'    `-..-'              ");
+                " ''-'   `'-'    `-..-'              ");*/
     }
 }
