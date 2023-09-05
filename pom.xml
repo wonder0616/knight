@@ -63,7 +63,7 @@
         <relativePath/>
     </parent>
     <modules>
-        <module>knight-dingding</module>
+<!--        <module>knight-dingding</module>-->
         <module>knight-admin</module>
         <module>knight-system</module>
         <module>knight-framework</module>

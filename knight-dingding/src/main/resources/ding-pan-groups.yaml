@@ -1,0 +1,32 @@
+ding-pan-groups:
+  preferRegion: ZHANGJIAKOU
+  groupConstants:
+#    - groupTAG: RZGTEST
+#      corpId: ding7c130964a07b3c11a39a90f97fcb1e09
+#        #开发者后台->应用开发-企业内部应用->选择您的小程序->凭证与基础信息->AppKey
+#      APP_KEY: dingvqeswc06gq6zm7gd
+#        #开发者后台->应用开发-企业内部应用->选择您的小程序->凭证与基础信息->AppSecret
+#      APP_SECRET: HiIakE4Annig3ULFrrhaiqHZCXS6_xM4k97CVhIC467xLJ9V226e2BYcE7gNJblD
+
+#    - groupTAG: lmbs
+#      corpId: ding7c130964a07b3c11a39a90f97fcb1e09
+#      #开发者后台->应用开发-企业内部应用->选择您的小程序->凭证与基础信息->AppKey
+#      APP_KEY: dinge8fnetcnfc0otyah
+#      #开发者后台->应用开发-企业内部应用->选择您的小程序->凭证与基础信息->AppSecret
+#      APP_SECRET: QmlUvkob3byeIoCzzg1qsIpAEcqK9opshmvXd4qqIK3V6ea0k4PsRMR20tdvLhm1
+#
+#      日照港技术创新中心
+    - groupTAG: jscxzx
+      corpId: dingb8c1879ddc0d5c84ee0f45d8e4f7c288
+      #开发者后台->应用开发-企业内部应用->选择您的小程序->凭证与基础信息->AppKey
+      APP_KEY: ding0kwsexk8nkkwssho
+      #开发者后台->应用开发-企业内部应用->选择您的小程序->凭证与基础信息->AppSecret
+      APP_SECRET: t-yvBwQS5IccJj_26LEzdiEBQg5D7q0_1rzLJZsT_OEeTlugK3f3GHgZGUq53WgQ
+
+#      日照港集团有限公司
+    - groupTAG: rzgjt
+      corpId: ding6fbc1d3b2a6fbbd935c2f4657eb6378f
+      #开发者后台->应用开发-企业内部应用->选择您的小程序->凭证与基础信息->AppKey
+      APP_KEY: dingfqxb70u8gny10jhs
+      #开发者后台->应用开发-企业内部应用->选择您的小程序->凭证与基础信息->AppSecret
+      APP_SECRET: fe7RUVyYFIJDhnNHEY6Me-n3YvrxmNBr-waxg7WFPHLQoapQ8sX406SjXwQyEyOx

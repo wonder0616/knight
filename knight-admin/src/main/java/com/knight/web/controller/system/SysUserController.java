@@ -116,6 +116,11 @@ public class SysUserController extends BaseController
         return ajax;
     }
 
+    @Override
+    protected TableDataInfo getDataTable(List<?> list) {
+        return super.getDataTable(list);
+    }
+
     /**
      * 新增用户
      */
