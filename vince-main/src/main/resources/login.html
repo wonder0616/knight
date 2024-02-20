@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>token</h1>
+<input type="text" id="username" name="name" value="admin"/>
+<input type="text" id="password" name="password" value="123456"/>
+<button id="btn_login">登录,获取token</button>
+
+<button id="btn_testToken">没有token,不能访问</button>
+<button id="btn_delToken">删除token</button>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    $('#btn_delToken').click(function(){
+    })
+
+    $('#btn_testToken').click(function(){
+        $.ajax({
+            type:'get',
+            url:'http://localhost:8081/test',
+            success(res){
+                console.log(res);
+            }
+        })
+    })
+
+    $('#btn_login').click(function(){
+        $.ajax({
+            type:'post',
+            url:'http://localhost:8081/login',
+            data:{name:$('#username').val(),password:$('#password').val()},
+            success(res){
+                console.log(res);
+            }
+        })
+    })
+
+</script>
+</body>
+</html>

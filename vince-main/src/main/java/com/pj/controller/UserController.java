@@ -1,15 +1,38 @@
 package com.pj.controller;
 
 import cn.dev33.satoken.stp.StpUtil;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.crypto.SecretKey;
+import java.security.SecureRandom;
+
 
 /**
  * @author knight
  */
 @RestController
-@RequestMapping("/user/")
+@RequestMapping("/user")
 public class UserController {
+
+    /**
+     * 使用accessToken加解密
+     *
+     * @return
+     */
+//    @GetMapping("/getLoginInfo")
+//    public String getLoginInfo()
+//    {
+//        final SecureRandom random = RandomUtil.getSecureRandom("123456".getBytes());
+//        final SecretKey secretKey = KeyUtil.generateKey("AES", 128, random);
+//        System.out.println("======random====" + random);
+//        System.out.println("======secretKey====" + secretKey);
+//
+//        return "";
+//    }
+
 
     /**
      * 测试登录，浏览器访问： http://localhost:8081/user/doLogin?username=zhang&password=123456
@@ -18,7 +41,7 @@ public class UserController {
      * @param password
      * @return
      */
-    @RequestMapping("doLogin")
+    @PostMapping("/doLogin")
     public String doLogin(String username, String password) {
         // 此处仅作模拟示例，真实项目需要从数据库中查询数据进行比对
         if("zhang".equals(username) && "123456".equals(password)) {
@@ -28,12 +51,14 @@ public class UserController {
         return "登录失败";
     }
 
+
+
     /**
      * 查询登录状态，浏览器访问： http://localhost:8081/user/isLogin
      *
      * @return
      */
-    @RequestMapping("isLogin")
+    @RequestMapping("/isLogin")
     public String isLogin() {
         return "当前会话是否登录：" + StpUtil.isLogin();
     }
@@ -44,7 +69,7 @@ public class UserController {
      *
      * @return
      */
-    @RequestMapping("logOut")
+    @RequestMapping("/logOut")
     public String logOut() {
 
         StpUtil.logout();

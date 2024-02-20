@@ -74,6 +74,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- globalpay -->
+        <dependency>
+            <groupId>com.heartlandpaymentsystems</groupId>
+            <artifactId>globalpayments-sdk</artifactId>
+            <version>6.1.70</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.kan</groupId>-->
 <!--            <artifactId>kan-jtl-common</artifactId>-->

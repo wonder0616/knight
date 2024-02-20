@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pj</groupId>
-	<artifactId>springboot-pure</artifactId>
+	<artifactId>vince-main</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<!-- SpringBoot -->
@@ -34,6 +34,32 @@
 			<artifactId>sa-token-spring-boot-starter</artifactId>
 			<version>1.35.0.RC</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-codec.wso2/commons-codec -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.11</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15to18</artifactId>
+			<version>1.72</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcutil-jdk15to18</artifactId>
+			<version>1.72</version>
+			<type>jar</type>
+		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>com.alibaba</groupId>-->
+<!--			<artifactId>fastjson</artifactId>-->
+<!--			<version>1.2.6</version>-->
+<!--		</dependency>-->
 
 
 	</dependencies>
