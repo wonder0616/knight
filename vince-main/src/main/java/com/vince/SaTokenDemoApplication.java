@@ -1,4 +1,4 @@
-package com.pj;
+package com.vince;
 
 import cn.dev33.satoken.SaManager;
 import com.fasterxml.jackson.core.JsonProcessingException;
