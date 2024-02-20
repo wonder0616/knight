@@ -67,7 +67,7 @@
         <module>knight-admin</module>
         <module>knight-system</module>
         <module>knight-framework</module>
-        <module>knight-generator</module>
+<!--        <module>knight-generator</module>-->
         <module>knight-base-core</module>
     </modules>
     <dependencies>
