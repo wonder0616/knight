@@ -22,6 +22,9 @@
 	
 	<dependencies>
 
+		<!-- 其他依赖 -->
+
+
 		<!-- SpringBoot Web模块 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -41,6 +44,13 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.33</version>
 		</dependency>
+		<!-- rest client dependency -->
+		<dependency>
+			<groupId>com.cybersource</groupId>
+			<artifactId>cybersource-rest-client-java</artifactId>
+			<version>0.0.61</version>
+		</dependency>
+
 		<!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
 <!--		<dependency>-->
 <!--			<groupId>cn.dev33</groupId>-->
