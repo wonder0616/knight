@@ -1,5 +1,4 @@
 
-
 ### centos
 
 [https://www.jb51.net/article/140257.htm](https://www.jb51.net/article/140257.htm)
@@ -14,7 +13,7 @@
 - yum install -y java-1.8.0-openjdk-devel.x86_64
 - yum install -y java-1.8.0-openjdk-devel.aarch64
   > 基于mac虚拟机版本的安装
-  >
+
 - 执行完后会看见控制台刷出很多输出。
 - 耐心等待至自动安装完成
 - 安装目录在
@@ -64,3 +63,18 @@ export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 source ~/.bashrc
 ```
+
+
+mac电脑jdk路径
+/Library/Java/JavaVirtualMachines
+修改文件：
+/private/etc/profile
+```
+JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_351.jdk/Contents/Home"
+export JAVA_HOME
+CLASS_PATH="$JAVA_HOME/lib"
+PATH=".$PATH:$JAVA_HOME/bin"
+```
+source 
+
+

@@ -24,6 +24,12 @@
 
 		<!-- 其他依赖 -->
 
+		<!-- 图片转文字 -->
+		<dependency>
+			<groupId>net.sourceforge.tess4j</groupId>
+			<artifactId>tess4j</artifactId>
+			<version>4.5.2</version>
+		</dependency>
 
 		<!-- SpringBoot Web模块 -->
 		<dependency>
