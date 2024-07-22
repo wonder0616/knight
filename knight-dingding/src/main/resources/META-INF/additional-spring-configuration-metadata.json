@@ -1,8 +1,0 @@
-{
-  "properties": [
-    {
-      "name": "datalink.workSpaceId",
-      "type": "java.lang.String",
-      "description": "Description for datalink.workSpaceId."
-  }
-] }

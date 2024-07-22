@@ -63,12 +63,8 @@
         <relativePath/>
     </parent>
     <modules>
-<!--        <module>knight-dingding</module>-->
-        <module>knight-admin</module>
-        <module>knight-system</module>
-        <module>knight-framework</module>
-<!--        <module>knight-generator</module>-->
-        <module>knight-base-core</module>
+        <module>vince-main</module>
+        <module>vince-utils</module>
     </modules>
     <dependencies>
         <!-- pagehelper 分页插件 -->
