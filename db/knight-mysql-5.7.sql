@@ -1,5 +1,5 @@
-CREATE database if NOT EXISTS `knight` default character set utf8mb4 collate utf8mb4_general_ci;
-USE `knight`;
+CREATE database if NOT EXISTS `vince` default character set utf8mb4 collate utf8mb4_general_ci;
+USE `vince`;
 
 /*
  Navicat Premium Data Transfer
@@ -8,7 +8,7 @@ USE `knight`;
  Source Server Type    : MySQL
  Source Server Version : 50738
  Source Host           : 127.0.0.1:3306
- Source Schema         : knight
+ Source Schema         : vince
 
  Target Server Type    : MySQL
  Target Server Version : 50738
